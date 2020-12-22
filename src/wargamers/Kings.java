@@ -39,23 +39,14 @@ public class Kings {
         double warriorLoss = Math.round(amountDifference * damageStrength); //200
         
         System.out.println(sumKing1);
-<<<<<<< Updated upstream
-        System.out.println(k1_attack_skill); //geht nicht weil kleiner durch größer geteilt wird
-        
-        
-=======
         System.out.println(k1_attack_skill); 
->>>>>>> Stashed changes
         
         if (sumKing1 > sumKing2){
             
             king2.warriors = king2.warriors - warriorLoss; 
             System.out.println(king2.name + " looses "+ warriorLoss + " warriors.");
-<<<<<<< Updated upstream
-=======
             king1.strength = king1.strength * 0.9; 
             System.out.println(king1.strength);
->>>>>>> Stashed changes
         }
         else if (sumKing1 < sumKing2){
             
@@ -73,16 +64,7 @@ public class Kings {
         }
     }
     
-    
-    
-    public void defense(Kings king1, Kings king2){
-<<<<<<< Updated upstream
-        
-        
-=======
->>>>>>> Stashed changes
-        
-    }
+   
     
     
     public void retreat(){
@@ -90,8 +72,18 @@ public class Kings {
     }
     
     
-    public void run_over(){
-        
+    public void run_over_King1(Kings king1, Kings king2){
+        int run_over_indicator = wargamers.RandomGenerator.generateRandom(100, 250);
+        king1.warriors = king1.warriors - run_over_indicator; 
+        king2.warriors = king2.warriors + run_over_indicator; 
+        System.out.println(run_over_indicator + " warriors leave " +  king1.name + "´s army and change sites."); 
+    }
+    
+    public void run_over_King2(Kings king1, Kings king2){
+        int run_over_indicator = wargamers.RandomGenerator.generateRandom(100, 250);
+        king2.warriors = king2.warriors - run_over_indicator; 
+        king1.warriors = king1.warriors + run_over_indicator; 
+        System.out.println(run_over_indicator + " warriors leave " +  king2.name + "´s army and change sites."); 
     }
     
     
