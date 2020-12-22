@@ -40,6 +40,7 @@ public class WarGamers {
         int damageStrength = 200; 
         
         wargamers.Kings.attack(Arthur, Ludwig, damageStrength);
+        System.out.println(Ludwig.warriors);
         
     }
     
