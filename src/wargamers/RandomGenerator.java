@@ -11,13 +11,22 @@ import java.util.Random;
  * @author sebas
  */
 public class RandomGenerator {
-     public static int generateRandom(int min, int max ) {
-         
-        Random cube = new Random();
-        int counter =min + cube.nextInt(max);
-        //System.out.println(counter);
-        
-        return counter;
+    
+    Random cube;
+    
+    RandomGenerator(){
+         cube = new Random();
+    }
+
+
+    public double getRandPerc(){ // Delivers Factor between 95% and 105%
+        double randomNbr = cube.nextDouble(); // Random number between 0 and 1 
+        return (randomNbr *0.2) + 0.9; 
+    }
+            
+    
+    public int getRandReaction(){
+        return cube.nextInt(3);
     }
     
     

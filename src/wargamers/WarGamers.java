@@ -17,7 +17,23 @@ public class WarGamers {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int minCubeValue = 1; 
+        
+        RandomGenerator rndGen = new RandomGenerator();
+        
+        Kings k1 = new Kings("King Luis XIV", rndGen);
+        Kings k2 = new Kings("King Harald", rndGen);
+        
+        int cntr = 0;
+         
+        while (k1.isAlive() && k2.isAlive()){
+            if ( (cntr % 2) == 0 )k1.attack(k2);
+            else k2.attack(k1);
+            System.out.println(k1.toString());
+            System.out.println(k2.toString());
+            cntr++;
+        }
+        
+/*        int minCubeValue = 1; 
         int maxCubeValue = 6; 
         int randomResult = wargamers.RandomGenerator.generateRandom(minCubeValue, maxCubeValue);
         System.out.println(randomResult);
@@ -39,7 +55,7 @@ public class WarGamers {
         
         int damageStrength = 200; 
         
-        wargamers.Kings.attack(Arthur, Ludwig, damageStrength);
+        wargamers.Kings.attack(Arthur, Ludwig, damageStrength);*/
         
     }
     
