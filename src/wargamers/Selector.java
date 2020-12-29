@@ -13,38 +13,18 @@ import wargamers.Attack;
  */
 public class Selector {
     
-<<<<<<< Updated upstream
-    public void selectInteraction(){
-=======
     public static void selectInteraction(Kings king1, Kings king2, int damageStrength){
->>>>>>> Stashed changes
         
-        System.out.println("Please select one of the following interations: ");
+        System.out.println("Please select one of the following interactions: ");
         
         System.out.println("1. attack");
-<<<<<<< Updated upstream
-        System.out.println("2. defense");
-=======
         System.out.println("2. run over");
         System.out.println("3. speacial Attack");
         
->>>>>>> Stashed changes
         
         Scanner myScanner = new Scanner(System.in);
         int decision = myScanner.nextInt();
         
-<<<<<<< Updated upstream
-        
-        
-        
-        
-        switch (decision){
-        //case 1: Kings.attack(king1, king2, decision);
-    }
-        
-        
-        
-=======
         switch (decision){
             case 1: 
                 wargamers.Attack.attack(king1, king2, damageStrength);  
@@ -61,7 +41,6 @@ public class Selector {
         }
 
     } 
->>>>>>> Stashed changes
         
     }
     

@@ -9,14 +9,8 @@ package wargamers;
  *
  * @author sebas
  */
-<<<<<<< Updated upstream:src/wargamers/SpecialattackKing2.java
-public class SpecialattackKing2 {
-    
-public void startSpecialAttack(Kings king1, Kings king2){
-=======
 public class SpecialAttack {
     public static void startSpecialAttack(Kings king1, Kings king2){
->>>>>>> Stashed changes:src/wargamers/SpecialAttack.java
         int selector = wargamers.RandomGenerator.generateRandom(1, 4);
         
         switch (selector){
@@ -67,15 +61,15 @@ public class SpecialAttack {
        
        switch(pickedSpecialAttackDistance_move){
            case 1: 
-               bow_and_arrow_King2(king1, king2); 
+               bow_and_arrow(king1, king2); 
                break; 
                
            case 2: 
-               rain_of_fire_King2(king1, king2); 
+               rain_of_fire(king1, king2); 
                break; 
 
            case 3: 
-               smoke_bomb_King2(king1, king2);
+               smoke_bomb(king1, king2);
                break; 
        } 
     }
@@ -86,15 +80,15 @@ public class SpecialAttack {
        
        switch(pickedSpecialAttackHelp){
            case 1: 
-               additional_warriors_King2(king1, king2); 
+               additional_warriors(king1, king2); 
                break; 
                
            case 2: 
-               ambush_King2(king1, king2); 
+               ambush(king1, king2); 
                break; 
 
            case 3: 
-               health_and_care_package_King2(king2);
+               health_and_care_package(king2);
                break; 
        } 
     }
@@ -117,30 +111,6 @@ public class SpecialAttack {
         king2.strength = king2.strength * 1.1; 
     }
     
-<<<<<<< Updated upstream:src/wargamers/SpecialattackKing2.java
-    private void bow_and_arrow_King2(Kings king1, Kings king2){
-        king1.armor_strength = king1.armor_strength * 0.9; 
-        king1.warriors = king1.warriors * 0.85; 
-        System.out.println(king2.name + "shoots arrows on " +  king1.name);
-        System.out.println(king1.name + " looses 10 % armor strength and " + king1.warriors + " warriors");
-    }
-    
-    private void rain_of_fire_King2(Kings king1, Kings king2){
-        king1.armor_strength = king1.armor_strength * 0.7; 
-        king1.warriors = king1.warriors * 0.75; 
-        System.out.println(king2.name + "shoots burning arrows on " +  king1.name);
-        System.out.println(king1.name + " looses 30 % armor strength and " + king1.warriors + " warriors");
-    }
-    
-    private void smoke_bomb_King2(Kings king1, Kings king2){
-        king1.strength = king1.strength * 0.85; 
-        king1.warriors = king1.warriors * 0.9; 
-        System.out.println(king2.name +  " throws smokebombs on " + king1.name);
-        System.out.println(king1.name +  " looses 15 % strength and " + king1.warriors + " warriors.");
-    }
-    
-    private void additional_warriors_King2(Kings king1, Kings king2){
-=======
     private static void bow_and_arrow(Kings king1, Kings king2){
         king2.armor_strength = king2.armor_strength * 0.9; 
         king2.warriors = king2.warriors * 0.85; 
@@ -163,7 +133,6 @@ public class SpecialAttack {
     }
     
     private static void additional_warriors(Kings king1, Kings king2){
->>>>>>> Stashed changes:src/wargamers/SpecialAttack.java
         int added_warriors = wargamers.RandomGenerator.generateRandom(50, 400);
         king1.warriors = king1.warriors + added_warriors; 
         System.out.println(king1.name + " gets support by " + added_warriors +  " new warriors. ");
@@ -171,11 +140,7 @@ public class SpecialAttack {
         System.out.println("The Army of " +  king2.name + " is afraid. ");    
     }
     
-<<<<<<< Updated upstream:src/wargamers/SpecialattackKing2.java
-    private void ambush_King2(Kings king1, Kings king2){
-=======
     private static void ambush(Kings king1, Kings king2){
->>>>>>> Stashed changes:src/wargamers/SpecialAttack.java
         int warriorloss = wargamers.RandomGenerator.generateRandom(150, 300);
         king2.warriors = king2.warriors - warriorloss; 
         System.out.println(king1.name + " has started an ambush.");
@@ -183,19 +148,11 @@ public class SpecialAttack {
         System.out.println(king2.name + " has " + king2.warriors + " left.");  
     }
     
-<<<<<<< Updated upstream:src/wargamers/SpecialattackKing2.java
-    private void health_and_care_package_King2(Kings king2){
-        System.out.println(king2.name + "´s armee gets +2 strength, +2 armor strength, +2 weapon strength. ");
-        king2.strength = king2.strength + 2; 
-        king2.armor_strength = king2.armor_strength + 2; 
-        king2.weapon_strength = king2.weapon_strength + 2; 
-=======
     private static void health_and_care_package(Kings king1){
         System.out.println(king1.name + "´s armee gets +2 strength, +2 armor strength, +2 weapon strength. ");
         king1.strength = king1.strength + 2; 
         king1.armor_strength = king1.armor_strength + 2; 
         king1.weapon_strength = king1.weapon_strength + 2; 
->>>>>>> Stashed changes:src/wargamers/SpecialAttack.java
     }
     
 }
