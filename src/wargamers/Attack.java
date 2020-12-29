@@ -60,22 +60,15 @@ public class Attack {
     }
     
     
-    public void run_over_King1(Kings king1, Kings king2){
-        int run_over_indicator = wargamers.RandomGenerator.generateRandom(100, 250);
-        king1.warriors = king1.warriors - run_over_indicator; 
-        king2.warriors = king2.warriors + run_over_indicator; 
-        System.out.println(run_over_indicator + " warriors leave " +  king1.name + "´s army and change sites."); 
-    }
-    
-    public void run_over_King2(Kings king1, Kings king2){
+    public static void run_over_King(Kings king1, Kings king2){
         int run_over_indicator = wargamers.RandomGenerator.generateRandom(100, 250);
         king2.warriors = king2.warriors - run_over_indicator; 
         king1.warriors = king1.warriors + run_over_indicator; 
         System.out.println(run_over_indicator + " warriors leave " +  king2.name + "´s army and change sites."); 
     }
     
-    
-    public void specialAttack (){
+    public static void specialAttack (Kings king1, Kings king2){
+        wargamers.SpecialAttack.startSpecialAttack(king1, king2);
         
     }
     

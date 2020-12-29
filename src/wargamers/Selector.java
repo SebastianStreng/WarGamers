@@ -5,7 +5,7 @@
  */
 package wargamers;
 import java.util.Scanner;
-import wargamers.Kings;
+import wargamers.Attack; 
 
 /**
  *
@@ -13,28 +13,35 @@ import wargamers.Kings;
  */
 public class Selector {
     
-    public void selectInteraction(Kings king1, Kings king2, int damageStrength){
+    public static void selectInteraction(Kings king1, Kings king2, int damageStrength){
         
         System.out.println("Please select one of the following interactions: ");
         
         System.out.println("1. attack");
-        System.out.println("2. defense");
-        System.out.println("3. run over");
-        System.out.println("4. Special attack");
+        System.out.println("2. run over");
+        System.out.println("3. speacial Attack");
+        
         
         Scanner myScanner = new Scanner(System.in);
         int decision = myScanner.nextInt();
         
         switch (decision){
-            case 1:
-                wargamers.Kings.attack(king1, king2, damageStrength);
+            case 1: 
+                wargamers.Attack.attack(king1, king2, damageStrength);  
+            break;
+            case 2: 
+                wargamers.Attack.run_over_King(king1, king2);
+            break; 
+            case 3 : 
+                wargamers.Attack.specialAttack(king1, king2);
+                break; 
+            default: 
+                System.out.println("please type the right number of your prefered attack. ");
+            break; 
         }
-        
-    }
-        
-        
-        
+
+    } 
         
     }
     
-}
+
