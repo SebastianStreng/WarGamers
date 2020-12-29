@@ -6,6 +6,7 @@
 package wargamers;
 import wargamers.Kings; 
 import wargamers.RandomGenerator;
+import wargamers.Selector; 
 /**
  *
  * @author sebas
@@ -39,14 +40,32 @@ public class WarGamers {
         
         int damageStrength = 200; 
         
-        wargamers.Kings.attack(Arthur, Ludwig, damageStrength);
-        System.out.println(Ludwig.warriors);
         
+        do {
+            System.out.println("It´s your turn: \n\n\n\n");
+            wargamers.Selector.selectInteraction(Arthur, Ludwig, damageStrength);
+            System.out.println("\n\n\n Enemie´s turn: ");
+            getRandomAttack(Ludwig, Arthur, damageStrength); 
+        }while (Arthur.warriors > 0 || Ludwig.warriors > 0); 
     }
     
    
         
-
+    private static void getRandomAttack (Kings king1, Kings king2, int damageStrength){
+        int randomPick= wargamers.RandomGenerator.generateRandom(1, 3);
+        
+        switch (randomPick){
+        case 1: 
+                wargamers.Attack.attack(king1, king2, damageStrength);  
+            break;
+        case 2: 
+                wargamers.Attack.run_over_King(king1, king2);
+            break; 
+        case 3 : 
+                wargamers.Attack.specialAttack(king1, king2);
+            break; 
+    }
+    }
         
         
     
