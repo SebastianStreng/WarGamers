@@ -42,10 +42,21 @@ public class WarGamers {
         
         
         do {
+            System.out.println("KING ARTHUR´S VALUES: \n" + "Warriors: " + Arthur.warriors);
+            System.out.println("strength: "+Arthur.strength);
+            System.out.println("weapon strength: "+Arthur.weapon_strength);
+            System.out.println("armor strength: "+Arthur.armor_strength + "\n\n");
+            
+            System.out.println("KING LUDWIG ´S VALUES: \n" + "Warriors: " + Ludwig.warriors);
+            System.out.println("strength: "+Ludwig.strength);
+            System.out.println("weapon strength: "+Ludwig.weapon_strength);
+            System.out.println("armor strength: "+Ludwig.armor_strength + "\n\n");
+            
             System.out.println("It´s your turn: \n\n\n\n");
             wargamers.Selector.selectInteraction(Arthur, Ludwig, damageStrength);
             System.out.println("\n\n\n Enemie´s turn: ");
             getRandomAttack(Ludwig, Arthur, damageStrength); 
+            System.out.println("\n\n");
         }while (Arthur.warriors > 0 || Ludwig.warriors > 0); 
     }
     

@@ -12,47 +12,10 @@ package wargamers;
 public class Attack {
     
      public static void attack(Kings king1, Kings king2, int damageStrength){
-        
-        double k1_attack_skill =   king1.strength/king1.warriors; 
-        double k2_attack_skill =   king2.strength/king2.warriors; 
-        
-        double sumKing1 =
-                k1_attack_skill +
-                king1.weapon_strength + 
-                king1.armor_strength;
-        
-        double sumKing2 = 
-                k2_attack_skill +
-                king2.weapon_strength +
-                king2.armor_strength;
-        
-        double amountDifference = Math.abs(sumKing1 - sumKing2);
-        double warriorLoss = Math.round(amountDifference * damageStrength); //200
-        
-        System.out.println(sumKing1);
-        System.out.println(k1_attack_skill); 
-        
-        if (sumKing1 > sumKing2){
-            
-            king2.warriors = king2.warriors - warriorLoss; 
-            System.out.println(king2.name + " looses "+ warriorLoss + " warriors.");
-            king1.strength = king1.strength * 0.9; 
-            System.out.println(king1.strength);
-        }
-        else if (sumKing1 < sumKing2){
-            
-            king1.warriors = king1.warriors - warriorLoss; 
-            System.out.println(king1.name + " looses "+ warriorLoss + " warriors.");
-        }
-        else if (sumKing1 == sumKing2){
-            king2.warriors = king2.warriors - warriorLoss;
-            king1.warriors = king1.warriors - warriorLoss;    
-            System.out.println(king2.name + " looses "+ warriorLoss + " warriors.");
-            System.out.println(king1.name + " looses "+ warriorLoss + " warriors.");
-        }
-        else {
-           System.out.println("OOps - something went wrong here");
-        }
+         
+         king2.warriors = king2.warriors * 0.7; 
+         System.out.println(king1.name + " has attacked " + king2.name + "´s armee. " +
+                 king2.name + " has now " + king2.warriors + " warriors left.");
     }
      
       public void retreat(){
