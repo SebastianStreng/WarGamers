@@ -17,7 +17,7 @@ public class KingsKI extends Kings{
     @Override
        public void selectInteraction(Kings king2, int damageStrength) {
 
-        int randomPick= wargamers.RandomGenerator.generateRandom(1, 2);
+        int randomPick= wargamers.RandomGenerator.generateRandom(1, 3);
         
         switch (randomPick){
         case 1: 
@@ -26,8 +26,11 @@ public class KingsKI extends Kings{
         case 2: 
                 this.run_over_King(king2);
             break; 
-/*        case 3 : 
-                wargamers.Attack.specialAttack(king1, king2);*/
+        case 3 : 
+                int spAtRandom = wargamers.RandomGenerator.generateRandom(1,2);
+                if (spAtRandom == 1) this.a1.proceedAttack(this, king2, damageStrength);
+                else this.a2.proceedAttack(this, king2, damageStrength);
+                break;
         }
     }
     

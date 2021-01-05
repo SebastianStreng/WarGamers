@@ -9,8 +9,12 @@ package wargamers;
  *
  * @author sebas
  */
-public class SpecialAttack {
- /*   public static void startSpecialAttack(Kings king1, Kings king2){
+public interface SpecialAttack  {
+    public abstract void proceedAttack(Kings king1, Kings king2, int damageStrength);
+}
+
+
+/*   public static void startSpecialAttack(Kings king1, Kings king2){
         int selector = wargamers.RandomGenerator.generateRandom(1, 4);
         
         switch (selector){
@@ -110,43 +114,7 @@ public class SpecialAttack {
         king1.strength = king1.strength * 1.1; 
         king2.strength = king2.strength * 1.1; 
     }
-    
-    private static void bow_and_arrow(Kings king1, Kings king2){
-        king2.armor_strength = king2.armor_strength * 0.9; 
-        king2.warriors = king2.warriors * 0.85; 
-        System.out.println(king1.name + " shoots arrows on " +  king2.name);
-        System.out.println(king2.name + " looses 10 % armor strength and " + king2.warriors + " warriors");
-    }
-    
-    private static void rain_of_fire(Kings king1, Kings king2){
-        king2.armor_strength = king2.armor_strength * 0.7; 
-        king2.warriors = king2.warriors * 0.75; 
-        System.out.println(king1.name + "shoots burning arrows on " +  king2.name);
-        System.out.println(king2.name + " looses 30 % armor strength and " + king2.warriors + " warriors");
-    }
-    
-    private static void smoke_bomb(Kings king1, Kings king2){
-        king2.strength = king2.strength * 0.85; 
-        king2.warriors = king2.warriors * 0.9; 
-        System.out.println(king1.name +  " throws smokebombs on " + king2.name);
-        System.out.println(king2.name +  " looses 15 % strength and " + king2.warriors + " warriors.");
-    }
-    
-    private static void additional_warriors(Kings king1, Kings king2){
-        int added_warriors = wargamers.RandomGenerator.generateRandom(50, 400);
-        king1.warriors = king1.warriors + added_warriors; 
-        System.out.println(king1.name + " gets support by " + added_warriors +  " new warriors. ");
-        System.out.println("The Army of " +  king1.name + " has now " +  king1.warriors +  " warriors.");
-        System.out.println("The Army of " +  king2.name + " is afraid. ");    
-    }
-    
-    private static void ambush(Kings king1, Kings king2){
-        int warriorloss = wargamers.RandomGenerator.generateRandom(150, 300);
-        king2.warriors = king2.warriors - warriorloss; 
-        System.out.println(king1.name + " has started an ambush.");
-        System.out.println(king2.name + "looses" + warriorloss + " warriors.");
-        System.out.println(king2.name + " has " + king2.warriors + " left.");  
-    }
+  
     
     private static void health_and_care_package(Kings king1){
         System.out.println(king1.name + "´s armee gets +2 strength, +2 armor strength, +2 weapon strength. ");
@@ -155,4 +123,3 @@ public class SpecialAttack {
         king1.weapon_strength = king1.weapon_strength + 2; 
     }
     */
-}

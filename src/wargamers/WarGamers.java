@@ -24,7 +24,7 @@ public class WarGamers {
         System.out.println(randomResult);
         
         
-        Kings Arthur = new Kings("King Arthur", 1000, 10, 15, 5);
+        KingsKI Arthur = new KingsKI("King Arthur", 1000, 10, 15, 5);
         
         KingsKI Ludwig = new KingsKI ("King Ludwig", 1700, 6, 16,3); 
         int damageStrength = 200; 

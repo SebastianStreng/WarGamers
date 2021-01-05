@@ -19,6 +19,8 @@ public class Kings {
     private double strength; //nach jedem angriff um 10% senken - funktion bauen erholung - random erholung 
     private double weapon_strength;
     private double armor_strength; 
+    SpecialAttack a1;
+    SpecialAttack a2;
 
     Kings(String name, int warriors, double strength, double weapon_strength, double armor_strength){
         this.name = name;
@@ -26,6 +28,27 @@ public class Kings {
         this.strength = strength;
         this.weapon_strength = weapon_strength;
         this.armor_strength = armor_strength;
+        
+        int a1Random = wargamers.RandomGenerator.generateRandom(1,5);
+        switch(a1Random){
+            case 1: this.a1 = new SpecialAttackBowAndArrow(); break;
+            case 2: this.a1 = new SpecialAttackRainOfFire(); break;
+            case 3: this.a1 = new SpecialAttackSmokeBomb(); break;
+            case 4: this.a1 = new SpecialAttackAdditionalWarriors(); break;
+            case 5: this.a1 = new SpecialAttackAmbush(); break;
+        }
+        
+        int a2Random = wargamers.RandomGenerator.generateRandom(1,5);
+        while (a2Random == a1Random){
+            a2Random = wargamers.RandomGenerator.generateRandom(1,5);
+        }
+        switch(a2Random){
+            case 1: this.a2 = new SpecialAttackBowAndArrow(); break;
+            case 2: this.a2 = new SpecialAttackRainOfFire(); break;
+            case 3: this.a2 = new SpecialAttackSmokeBomb(); break;
+            case 4: this.a2 = new SpecialAttackAdditionalWarriors(); break;
+            case 5: this.a2 = new SpecialAttackAmbush(); break;
+        }
     }
     
     @Override
@@ -34,6 +57,7 @@ public class Kings {
         s += "strength: " + strength + "\n";
         s += "weapon strength: " + weapon_strength + "\n";
         s += "armor strength: " + armor_strength + "\n";
+        s+= "special attacks: "+ a1.toString() + ", "+a2.toString()+"\n";
         return s;
     }
 
@@ -95,9 +119,11 @@ public class Kings {
             case 2:
                 this.run_over_King(king2);
                 break;
-/*            case 3:
-                this.specialAttack(king2);
-                break;*/
+            case 3:
+                int spAtRandom = wargamers.RandomGenerator.generateRandom(1,2);
+                if (spAtRandom == 1) this.a1.proceedAttack(this, king2, damageStrength);
+                else this.a2.proceedAttack(this, king2, damageStrength);
+                break;
             default:
                 System.out.println("please type the right number of your prefered attack. ");
                 break;
