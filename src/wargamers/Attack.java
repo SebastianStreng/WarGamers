@@ -10,7 +10,7 @@ package wargamers;
  * @author sebas
  */
 public class Attack {
-    
+ /*   
      public static void attack(Kings king1, Kings king2, int damageStrength){
          
          king2.warriors = king2.warriors * 0.7; 
@@ -38,5 +38,5 @@ public class Attack {
     
     public void recovery (){
         
-    }
+    }*/
 }

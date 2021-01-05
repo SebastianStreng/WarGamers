@@ -12,7 +12,7 @@ import wargamers.Attack;
  * @author sebas
  */
 public class Selector {
-    
+/*    
     public static void selectInteraction(Kings king1, Kings king2, int damageStrength){
         
         System.out.println("Please select one of the following interactions: ");
@@ -41,7 +41,7 @@ public class Selector {
         }
 
     } 
-        
+       */
     }
     
 

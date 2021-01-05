@@ -10,7 +10,7 @@ package wargamers;
  * @author sebas
  */
 public class SpecialAttack {
-    public static void startSpecialAttack(Kings king1, Kings king2){
+ /*   public static void startSpecialAttack(Kings king1, Kings king2){
         int selector = wargamers.RandomGenerator.generateRandom(1, 4);
         
         switch (selector){
@@ -154,5 +154,5 @@ public class SpecialAttack {
         king1.armor_strength = king1.armor_strength + 2; 
         king1.weapon_strength = king1.weapon_strength + 2; 
     }
-    
+    */
 }
